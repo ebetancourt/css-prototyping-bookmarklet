@@ -1,0 +1,23 @@
+(function(){
+    var s1=document.createTextNode('body::before { content:&quot;&quot;; position:fixed; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjVJivzgAAAAyUlEQVRoQ%2B2abQqAIBBEPW1X6CzdqTv1RUFIipi2o72gPyXV7uybKci5wDZM8xI6dz%2Buvs6pP2Dq81GI2qiiiJkiOzQ97EGHTXUF9XUwYsaI2o1LjyqjpaYwiqDI2YFs2HtI9Wjx2Z0R%2B1ADdmB%2FC7taB0uzCSNqCqOImSIkeyW7xLXMZvqjdzJcS01hFEGRSnbe3miR7JVGgWRXcxkUQRFgj%2F8Y8htGtkJHL%2FvGaGtKd6bU9Z4C%2FCiEZDeCPahIa%2FbbDSNX433mVkIrV5rTnhDyAAAAAElFTkSuQmCC)  50% 0; z-index:1; top:0; right:0; bottom:0; left:0; opacity:.3; pointer-events:none; } * { -webkit-user-modify: read-write; word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; } a { -webkit-user-modify: initial; }');
+    var s2=document.createTextNode('#a1_z { background-color: #fff; float: left; position: absolute; z-index:2; padding: 3px; border: 1px solid; }');
+    var css=document.createElement('style');
+    css.type='text/css';
+    css.media='screen';
+    document.getElementsByTagName('head')[0].appendChild(css);
+    css.appendChild(s1);
+    css.appendChild(s2);
+    var div=document.createElement('div');
+    div.id='a1_z';
+    input=document.createElement('input');
+    input.type='checkbox';
+    input.checked='checked';
+    var label=document.createElement('label');
+    label.innerHTML=' Toggle Grid ';
+    div.appendChild(input);
+    div.appendChild(label);
+    var body=document.getElementsByTagName('body')[0];
+    var first=body.firstChild;
+    body.insertBefore(div,first);
+    input.onclick=function(){if(this.checked){css.appendChild(s1);}else{css.removeChild(s1);}};
+})();
